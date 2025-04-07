@@ -1,3 +1,10 @@
+const IBANValidator = require('iban-validator-js');
+IBANValidator.isValid(''); // false
+IBANValidator.isValid('not-a-valid-IBAN'); // false
+IBANValidator.isValid('TR320010009999901234567890'); // true
+IBANValidator.isValid('BE68539007547034'); // true
+	
+
 // Klassendefinition des Kunden
 class Kunde{
 	constructor(){
@@ -148,6 +155,7 @@ app.get('/', (req, res) => {
 		});
 	}	
 });
+
 
 // Wenn im Browser die Adresse .../agb aufgerufen wird, wird der Server aufgefordert,
 // die angefragte Seite an den Browser zurückzugeben.
@@ -481,3 +489,5 @@ console.log(`Running on http://${HOST}:${PORT}`);
 //require('./uebungen/03-objekte.js');
 //require('./klausuren/klausur20240930.js');
 //require('./uebungen/04-funktionen.js');
+
+
